@@ -34,3 +34,8 @@ Cypress.Commands.add('setLabelOnIssue', label => {
 	cy.get('body').click()
 })
 
+Cypress.Commands.add('setMilestoneOnIssue', label => {
+	cy.get('.qa-edit-link-milestones').click()
+	cy.contains(milestone.title).click()
+	cy.get('body').click()
+})
