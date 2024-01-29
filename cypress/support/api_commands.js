@@ -27,3 +27,14 @@ Cypress.Commands.add('api_createIssue', issue => {
     })
 })
 
+Cypress.Commands.add('api_createLabel', (project_id, label) => {
+    cy.request({
+        method: 'POST',
+        url: `/api/v4/projects/${project_id}/labels`,
+        body: {
+            name : label.name,
+            color : label.color
+        },
+        headers: { Authorization: accessToken },
+    })
+})
