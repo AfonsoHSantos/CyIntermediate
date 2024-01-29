@@ -12,6 +12,7 @@ Cypress.Commands.add('api_createProject', project => {
     headers: { Authorization: accessToken },
   })
 })
+
 Cypress.Commands.add('api_createIssue', issue => {
     cy.api_createProject(issue.project)
     .then(response => {
