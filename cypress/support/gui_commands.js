@@ -1,3 +1,15 @@
+Cypress.Commands.add('createProject', project => {
+	cy.visit('/projects/new')
+
+	cy.get('#project_name').type(project.name)
+
+	cy.get('#project_description').type(project.name)
+
+	cy.get('#project_initialize_with_readme').check()
+
+	cy.contains('Create project').click()
+})
+
 Cypress.Commands.add('createIssue', issue => {
 	cy.visit('/dashboard/issues')
 
