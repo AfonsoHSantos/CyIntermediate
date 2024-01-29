@@ -38,3 +38,14 @@ Cypress.Commands.add('api_createLabel', (project_id, label) => {
         headers: { Authorization: accessToken },
     })
 })
+
+Cypress.Commands.add('api_createMilestone', (project_id, milestone) => {
+    cy.request({
+        method: 'POST',
+        url: `/api/v4/projects/${project_id}/milestones`,
+        body: {
+            title: milestone.title
+        },
+        headers: { Authorization: accessToken },
+    })
+})
